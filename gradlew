@@ -157,7 +157,7 @@ function splitJvmOpts() {
 
 if [ "${@: -1}" = "install" ]; then
     ./mvnw versions:set -DnewVersion=0.29.0
-    ./mvnw -Pcapsule clean package -Dmaven.test.skip=true
+    ./mvnw -Pcapsule clean install -Dmaven.test.skip=true
 else
     eval splitJvmOpts $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS
     JVM_OPTS[${#JVM_OPTS[*]}]="-Dorg.gradle.appname=$APP_BASE_NAME"
