@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.github.shyiko.ktlint</groupId>
+        <groupId>com.github.tiagoengel.ktlint</groupId>
         <artifactId>pom</artifactId>
         <version>0.0.0-SNAPSHOT</version>
     </parent>
@@ -35,32 +35,32 @@
             <!-- included (at least org.jetbrains.annotations.*) in kotlin-compiler-embeddable -->
         </dependency>
         <dependency>
-            <groupId>com.github.shyiko.ktlint</groupId>
+            <groupId>com.github.tiagoengel.ktlint</groupId>
             <artifactId>ktlint-core</artifactId>
             <version>0.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.github.shyiko.ktlint</groupId>
+            <groupId>com.github.tiagoengel.ktlint</groupId>
             <artifactId>ktlint-ruleset-standard</artifactId>
             <version>0.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.github.shyiko.ktlint</groupId>
+            <groupId>com.github.tiagoengel.ktlint</groupId>
             <artifactId>ktlint-reporter-plain</artifactId>
             <version>0.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.github.shyiko.ktlint</groupId>
+            <groupId>com.github.tiagoengel.ktlint</groupId>
             <artifactId>ktlint-reporter-json</artifactId>
             <version>0.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.github.shyiko.ktlint</groupId>
+            <groupId>com.github.tiagoengel.ktlint</groupId>
             <artifactId>ktlint-reporter-checkstyle</artifactId>
             <version>0.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.github.shyiko.ktlint</groupId>
+            <groupId>com.github.tiagoengel.ktlint</groupId>
             <artifactId>ktlint-test</artifactId>
             <version>0.0.0-SNAPSHOT</version>
         </dependency>
