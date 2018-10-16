@@ -156,6 +156,7 @@ function splitJvmOpts() {
 }
 
 if [ "${@: -1}" = "install" ]; then
+    ./mvnw versions:set -DnewVersion=0.29.0
     ./mvnw -Pcapsule clean package -Dmaven.test.skip=true
 else
     eval splitJvmOpts $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS
