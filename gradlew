@@ -167,7 +167,7 @@ if [ "${@: -1}" = "install" ]; then
         fi
     done
     
-    ./mvnw versions:set -DnewVersion=$version
+    ./mvnw versions:set -DnewVersion=master-SNAPSHOT
     ./mvnw -Pcapsule clean install -Dmaven.test.skip=true
 else
     exec "$JAVACMD" "${JVM_OPTS[@]}" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
