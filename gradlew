@@ -155,12 +155,20 @@ function splitJvmOpts() {
     JVM_OPTS=("$@")
 }
 
+eval splitJvmOpts $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS
+JVM_OPTS[${#JVM_OPTS[*]}]="-Dorg.gradle.appname=$APP_BASE_NAME"
+
 if [ "${@: -1}" = "install" ]; then
-    ./mvnw versions:set -DnewVersion=0.29.0
+    version=0.29.0
+    for arg in "$@"; do
+        echo $arg
+        if [[ $arg == \-Pversion\=* ]]; then
+            version=$(echo "$arg" | sed 's/\-Pversion\=//g')
+        fi
+    done
+    
+    ./mvnw versions:set -DnewVersion=$version
     ./mvnw -Pcapsule clean install -Dmaven.test.skip=true
 else
-    eval splitJvmOpts $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS
-    JVM_OPTS[${#JVM_OPTS[*]}]="-Dorg.gradle.appname=$APP_BASE_NAME"
-
     exec "$JAVACMD" "${JVM_OPTS[@]}" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
 fi
